@@ -2,10 +2,18 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-      <LangVersion>latest</LangVersion>
+    <LangVersion>latest</LangVersion>
+    <GenerateDocumentation>true</GenerateDocumentation>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>Y:\github\DEOS.OPEN_FXL.WebApi\OPEN_FXL.WebApi\OPEN_FXL.WebApi.xml</DocumentationFile>
+  </PropertyGroup>
 
+<PropertyGroup>
+    <DocumentationMarkdown>$(MSBuildProjectDirectory)\README.md</DocumentationMarkdown>
+</PropertyGroup>
+    
     <ItemGroup>
         <!--
         -->
@@ -13,6 +21,10 @@
         <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
         <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
         <PackageReference Include="System.Runtime.Caching" Version="5.0.0" />
+        <PackageReference Include="Vsxmd" Version="1.4.5">
+          <PrivateAssets>all</PrivateAssets>
+          <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
     </ItemGroup>
 
 </Project>

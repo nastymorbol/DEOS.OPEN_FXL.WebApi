@@ -1,0 +1,198 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>OPEN_FXL.WebApi</name>
+    </assembly>
+    <members>
+        <member name="M:FXL.WebApi.FxlClient.#ctor(FxlApiV1.Client)">
+            <summary>
+            Connect to OPEN FXL WebServer
+            </summary>
+            <param name="client"></param>
+        </member>
+        <member name="M:FXL.WebApi.FxlClient.GetProjectsAsync">
+            <summary>
+            Get Projects in the current active Workspace
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:FXL.WebApi.FxlClient.GetProjectAsync(System.String)">
+            <summary>
+            Get Projects in the current active Workspace (async)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:FXL.WebApi.FxlClient.CreateProjectAsync(System.String,System.String,FxlApiV1.ProjectInfoLanguage,System.String,System.Boolean)">
+            <summary>
+            Create a new Project
+            </summary>
+            <param name="name">The Projectname</param>
+            <param name="company">The Company</param>
+            <param name="language">The Language</param>
+            <param name="programmer">The Programmer</param>
+            <param name="utf8">The used Encoding</param>
+            <returns></returns>
+        </member>
+        <member name="M:FXL.WebApi.FxlClient.DeleteProject(FXL.WebApi.Project)">
+            <summary>
+            Delete the given Project
+            </summary>
+            <param name="project"></param>
+        </member>
+        <member name="M:FXL.WebApi.FxlClient.GetControllerAsync(System.String,System.String)">
+            <summary>
+            Returns an Controller within the given ProjectName
+            </summary>
+            <param name="projectname">The project name</param>
+            <param name="controllername">The controller name</param>
+            <returns></returns>
+        </member>
+        <member name="M:FXL.WebApi.FxlClient.GetFupPageAsync(System.String,System.String,System.String)">
+            <summary>
+            Returns an singe Fup Page Item
+            </summary>
+            <param name="projectname">The project name</param>
+            <param name="controllername">The controller name</param>
+            <param name="fupFilename">FUP-File Name (const.f)</param>
+            <returns></returns>
+        </member>
+        <member name="M:FxlApiV1.Client.GetProjectsAsync(System.Threading.CancellationToken)">
+            <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
+            <summary>Returns the list of visible projects in the current workspace.</summary>
+            <returns>A JSON array of project names.</returns>
+            <exception cref="T:FxlApiV1.ApiException">A server side error occurred.</exception>
+        </member>
+        <member name="M:FxlApiV1.Client.CreateProjectAsync(FxlApiV1.ProjectInfo,System.Threading.CancellationToken)">
+            <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
+            <summary>Creates a new project.</summary>
+            <returns>Project successfully created.</returns>
+            <exception cref="T:FxlApiV1.ApiException">A server side error occurred.</exception>
+        </member>
+        <member name="M:FxlApiV1.Client.GetProjectInfoAsync(System.String,System.Threading.CancellationToken)">
+            <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
+            <summary>Returns the info for a project.</summary>
+            <param name="projectId">Id of project.</param>
+            <returns>A JSON object with project info.</returns>
+            <exception cref="T:FxlApiV1.ApiException">A server side error occurred.</exception>
+        </member>
+        <member name="M:FxlApiV1.Client.DeleteProjectAsync(System.String,System.Threading.CancellationToken)">
+            <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
+            <summary>Deletes a project.</summary>
+            <param name="projectId">Id of project.</param>
+            <returns>Project successfully deleted.</returns>
+            <exception cref="T:FxlApiV1.ApiException">A server side error occurred.</exception>
+        </member>
+        <member name="M:FxlApiV1.Client.GetControllersAsync(System.String,System.Threading.CancellationToken)">
+            <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
+            <summary>Returns the list of controllers in a project.</summary>
+            <param name="projectId">Id of project.</param>
+            <returns>A JSON array with controllers.</returns>
+            <exception cref="T:FxlApiV1.ApiException">A server side error occurred.</exception>
+        </member>
+        <member name="M:FxlApiV1.Client.CreateControllerAsync(System.String,FxlApiV1.ControllerInfo,System.Threading.CancellationToken)">
+            <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
+            <summary>Creates a new controller.</summary>
+            <param name="projectId">Id of project.</param>
+            <returns>Controller successfully created.</returns>
+            <exception cref="T:FxlApiV1.ApiException">A server side error occurred.</exception>
+        </member>
+        <member name="M:FxlApiV1.Client.GetControllerInfoAsync(System.String,System.Threading.CancellationToken)">
+            <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
+            <summary>Returns the info for a controller.</summary>
+            <param name="controllerId">Id of controller.</param>
+            <returns>A JSON object with project info.</returns>
+            <exception cref="T:FxlApiV1.ApiException">A server side error occurred.</exception>
+        </member>
+        <member name="M:FxlApiV1.Client.DeleteControllerAsync(System.String,System.Threading.CancellationToken)">
+            <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
+            <summary>Deletes a controller.</summary>
+            <param name="controllerId">Id of controller.</param>
+            <returns>Controller successfully deleted.</returns>
+            <exception cref="T:FxlApiV1.ApiException">A server side error occurred.</exception>
+        </member>
+        <member name="M:FxlApiV1.Client.BuildControllerProgramAsync(System.String,FxlApiV1.BuildParameters,System.Threading.CancellationToken)">
+            <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
+            <summary>Build controller program.</summary>
+            <param name="controllerId">Id of controller.</param>
+            <returns>Controller program build request accepted.</returns>
+            <exception cref="T:FxlApiV1.ApiException">A server side error occurred.</exception>
+        </member>
+        <member name="M:FxlApiV1.Client.CleanControllerProgramAsync(System.String,System.Threading.CancellationToken)">
+            <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
+            <summary>Clean controller program.</summary>
+            <param name="controllerId">Id of controller.</param>
+            <returns>Controller program successfully cleaned.</returns>
+            <exception cref="T:FxlApiV1.ApiException">A server side error occurred.</exception>
+        </member>
+        <member name="M:FxlApiV1.Client.AddLogEntryAsync(System.String,FxlApiV1.LogEntry,System.Threading.CancellationToken)">
+            <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
+            <summary>Add an entry to the log file.</summary>
+            <param name="controllerId">Id of controller.</param>
+            <returns>Log entry successfully added.</returns>
+            <exception cref="T:FxlApiV1.ApiException">A server side error occurred.</exception>
+        </member>
+        <member name="M:FxlApiV1.Client.GetFupPagesAsync(System.String,System.Threading.CancellationToken)">
+            <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
+            <summary>Returns the list of fuppages of a controller.</summary>
+            <param name="controllerId">Id of controller.</param>
+            <returns>A JSON object with a list of fuppages.</returns>
+            <exception cref="T:FxlApiV1.ApiException">A server side error occurred.</exception>
+        </member>
+        <member name="M:FxlApiV1.Client.InsertFupPageAsync(System.String,FxlApiV1.FupPageInfo,System.Threading.CancellationToken)">
+            <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
+            <summary>Insert fup page/macro.</summary>
+            <param name="controllerId">Id of controller.</param>
+            <returns>A JSON object with fuppage info.</returns>
+            <exception cref="T:FxlApiV1.ApiException">A server side error occurred.</exception>
+        </member>
+        <member name="M:FxlApiV1.Client.GetFupPageInfoAsync(System.String,System.Threading.CancellationToken)">
+            <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
+            <summary>Returns the info for a FUP page.</summary>
+            <param name="fupPageId">Id of FUP page.</param>
+            <returns>A JSON object with fuppage info.</returns>
+            <exception cref="T:FxlApiV1.ApiException">A server side error occurred.</exception>
+        </member>
+        <member name="M:FxlApiV1.Client.SetFupPageInfoAsync(System.String,FxlApiV1.FupPageInfo,System.Threading.CancellationToken)">
+            <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
+            <summary>Changes the infos of a FUP page. Only change of macro status supported for now.</summary>
+            <param name="fupPageId">Id of FUP page.</param>
+            <returns>A JSON object with fuppage info.</returns>
+            <exception cref="T:FxlApiV1.ApiException">A server side error occurred.</exception>
+        </member>
+        <member name="M:FxlApiV1.Client.DeleteFupPageAsync(System.String,System.Threading.CancellationToken)">
+            <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
+            <summary>Deletes a FUP page.</summary>
+            <param name="fupPageId">Id of FUP page.</param>
+            <returns>FUP page successfully deleted.</returns>
+            <exception cref="T:FxlApiV1.ApiException">A server side error occurred.</exception>
+        </member>
+        <member name="M:FxlApiV1.Client.UpdateMacroAsync(System.String,System.Threading.CancellationToken)">
+            <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
+            <summary>Updates a macro.</summary>
+            <param name="fupPageId">Id of FUP page.</param>
+            <returns>Macro successfully updated.</returns>
+            <exception cref="T:FxlApiV1.ApiException">A server side error occurred.</exception>
+        </member>
+        <member name="M:FxlApiV1.Client.GetDefinitionsAsync(System.String,System.Threading.CancellationToken)">
+            <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
+            <summary>Returns the definitions of a macro.</summary>
+            <param name="fupPageId">Id of fup page/macro.</param>
+            <returns>A JSON object with list of definitions.</returns>
+            <exception cref="T:FxlApiV1.ApiException">A server side error occurred.</exception>
+        </member>
+        <member name="M:FxlApiV1.Client.SetDefinitionsAsync(System.String,System.Collections.Generic.IEnumerable{FxlApiV1.Definition},System.Threading.CancellationToken)">
+            <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
+            <summary>Sets definitions of a macro.</summary>
+            <param name="fupPageId">Id of macro.</param>
+            <returns>Definitions successfully set.</returns>
+            <exception cref="T:FxlApiV1.ApiException">A server side error occurred.</exception>
+        </member>
+        <member name="M:FxlApiV1.Client.GetProcessStatusAsync(System.String,System.Threading.CancellationToken)">
+            <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
+            <summary>Return the status of a long running process.</summary>
+            <param name="processId">Id of process.</param>
+            <returns>Process is still running</returns>
+            <exception cref="T:FxlApiV1.ApiException">A server side error occurred.</exception>
+        </member>
+    </members>
+</doc>
